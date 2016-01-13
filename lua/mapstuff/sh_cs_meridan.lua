@@ -1,4 +1,5 @@
 if SERVER then
+	-- Remove the horn button that people spam.
 	hook.Add("TTTPrepareRound", "Remove FUCKING Horn", function()
 		local hornbutton = ents.FindByClass("func_button")[1]
 		hornbutton:Remove()
