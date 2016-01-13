@@ -1,11 +1,9 @@
---if CLIENT then *8
 if SERVER then
-	-- hook.Add("TTTPrepareRound", "Remove FUCKING Horn", function()
-		-- for _, v in pairs(ents.FindByModel("")) do
-			-- v:Remove()
-		-- end
-	-- end)
--- else
+	hook.Add("TTTPrepareRound", "Remove FUCKING Horn", function()
+		local hornbutton = ents.FindByClass("func_button")[1]
+		hornbutton:Remove()
+	end)
+else
 	hook.Add("TTTBeginRound", "Start Music", function()
 		if LocalPlayer().MapMusic then
 			LocalPlayer().MapMusic:PlayEx( 0.5, 100 )
