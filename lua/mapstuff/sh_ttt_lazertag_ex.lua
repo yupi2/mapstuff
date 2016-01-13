@@ -1,7 +1,5 @@
--- Goes into lua/mapstuff/
-
 if SERVER then
-	-- Shit here.
+	-- Lazer (or is it laser) beam shit here
 else
 	local lazerTagSounds = {
 		Sound("swwa.mp3"),     -- 1 Journey - Separate Ways (Worlds Apart)
@@ -20,8 +18,9 @@ else
 		local limit = GetConVarNumber("ttt_round_limit")
 		local round = limit - left + 1
 
-		-- While loop is used to keep going through the songs if the round limit is bigger than the number of songs.
-		-- And is this where someone should use the modulo symbol?
+		-- While loop is used to keep going through the songs if the round
+		--  limit is bigger than the number of songs. And is this where
+		--  someone should use the modulo symbol?
 		while round > #lazerTagSounds do
 			round = round - #lazerTagSounds
 		end

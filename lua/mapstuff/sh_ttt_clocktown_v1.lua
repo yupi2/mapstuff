@@ -47,7 +47,7 @@ if SERVER then
 		for _,v in pairs( ents.FindByModel( "models/props_gameplay/resupply_locker.mdl" ) ) do
 			v:Remove()
 		end
-                        
+
 		local dayName = clockTownDays[ clockTownDay ]
 		local dayRelay = ents.FindByName( dayName )[1]
 		if IsValid( dayRelay ) then
@@ -85,8 +85,8 @@ if SERVER then
 
 	hook.Add("TTTEndRound", "Clocktown - End Music", function()
 		RunConsoleCommand("ulx", "stopsound")--RunConsoleCommand("ulx", "hide", "ulx stopsounds")--
-	end)	
-	
+	end)
+
 	local Weather = {
 		Shaker = nil
 	}

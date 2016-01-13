@@ -7,19 +7,21 @@ end
 
 hook.Add("Initialize", "MapStuff plz", function()
 	local map = game.GetMap()
-	local sv_map = "mapstuff/sv_"..map
-	local sh_map = "mapstuff/sh_"..map
-	local cl_map = "mapstuff/cl_"..map
-
-	if SERVER and file.Exists(sv_map, "LUA") then
-		include(sv_map)
-	end
+	local sv_map = "mapstuff/sv_"..map..".lua"
+	local sh_map = "mapstuff/sh_"..map..".lua"
+	local cl_map = "mapstuff/cl_"..map..".lua"
 
 	if file.Exists(sh_map, "LUA") then
 		if SERVER then
 			AddCSLuaFile(sh_map)
 		end
 		include(sh_map)
+
+		return
+	end
+
+	if SERVER and file.Exists(sv_map, "LUA") then
+		include(sv_map)
 	end
 
 	if file.Exists(cl_map, "LUA") then
